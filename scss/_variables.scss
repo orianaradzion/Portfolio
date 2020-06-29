@@ -30,71 +30,10 @@ $opacity: 0.9;
 }
 }
 
-
-  @media only screen and (max-width: 500px) {
-     main {
-    padding: 2rem;
-    #home h1 {
-      margin-top: 10vh;
-    }
-
-    .large-heading {
-      margin-top:1rem;
-      font-size: 5rem;
-    }
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
-  }
-
-
-
-  @media screen and (max-width: 768px) {
-    main {
-    align-items: center;
-    text-align: center;
-
-    .large-heading {
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-  }
-
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0;
-
-    &.show {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  .menu-nav {
-    height: 70vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 1.5rem;
-    
-    }
-
-  div.menu-branding {
-    height: 30vh;
-    transform: translate3d(100%, 0, 0);
-
-    .portrait {
-     width: 200px;
-     height: 200px;
-    }
-  }
-  }
-
-
-
-  @media screen and (min-width: 769px) and (max-width: 1170px) {
-    
-  }
-
-
-
-  @media screen and (min-width: 1171px) {
-    
-  }
+}
