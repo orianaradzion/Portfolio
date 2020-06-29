@@ -1,6 +1,16 @@
-
-@import "_variables";
+@import "_variables.scss";
 @import '_menu.scss';
+main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+
+    .lg-heading {
+      margin-top:1rem;
+      font-size: 5rem;
+    }
+  }
 
 *{
     box-sizing:border-box;}
@@ -25,11 +35,12 @@ h3 {
 .large-heading {
         font-size: 6rem;
 
-    }
-h2{
+    
+.small-heading{
     margin-bottom:2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color,2), 0.5);
+}
 }
 
 a {
@@ -57,11 +68,11 @@ main {
 
         a {
             padding: 0.4rem;
+            @include ease-out;
             
             &:hover{
                 color:$secondary-color;
-                @include ease-out();
-            }
+                }
            }
            
     }
@@ -73,3 +84,4 @@ main {
     }
 
 }
+
