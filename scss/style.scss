@@ -7,20 +7,20 @@
 @import '_mediaQueries';
 
 
-main {
-    padding: 2rem;
-    #home h1 {
-      margin-top: 10vh;
-    }
-
-    .lg-heading {
-      margin-top:1rem;
-      font-size: 5rem;
-    }
-  }
 
 *{
     box-sizing:border-box;}
+
+    html,body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
 body{
     @include background;
@@ -29,7 +29,12 @@ body{
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
-    line-height: 1.5;;
+    line-height: 1.5;
+    
+}
+
+#bg-image {
+    overflow: hidden;
 }
 
 h1,
@@ -41,6 +46,7 @@ h3 {
 
 .large-heading {
         font-size: 6rem;
+        
 
     
 .small-heading{
@@ -59,16 +65,150 @@ header{
     position: fixed;
     z-index: 2;
     width: 100%;
+    position: relative;
+
+    
 }
 
-.secondary-text{
+.container {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+    position: absolute;
+    left: 75%;
+    top: 119px;
+  }
+  
+  ul {
+      text-decoration: none;
+      list-style: none;
+    li {
+      margin: 0 0 24px;
+    }
+  }
+  
+  
+  
+  // The Arrow
+  
+  .the-arrow {
+    width: $shaft-width;
+    // transition: all 0.2s;
+   
+    &.-left {
+      position: absolute;
+      top: 60%;
+        left: 0;
+  
+      > .shaft {
+        width: 0;
+        background-color: white;
+        
+        &:before,
+        &:after {
+          width: 0;
+          background-color: white;
+        }
+  
+        &:before {
+          transform: rotate(0);
+        }
+  
+        &:after {
+          transform: rotate(0);
+        }
+      }
+    }
+    
+    &.-right {
+        position: absolute;
+        top: 60%;
+        left: 98%;
+        margin-left: 1rem;
+      
+      > .shaft {
+        width: $shaft-width;
+        transition-delay: 0.2s;
+  
+        &:before,
+        &:after { 
+          width: $arrow-head-width;
+          transition-delay: 0.3s;
+          transition: all 0.5s;
+        }
+        
+        &:before {
+          transform: rotate(40deg);
+        }
+        
+        &:after {
+          transform: rotate(-40deg);
+        }
+      }
+    }
+  
+    > .shaft {
+      background-color: white;
+      display: block;
+      height: $shaft-thickness;
+      position: relative;
+    //   transition: all 0.2s;
+    //   transition-delay: 0;
+    //   will-change: transform;
+  
+      &:before,
+      &:after {
+        background-color: white;
+        content: '';
+        display: block;
+        height: $arrow-head-thickness;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // transition: all 0.2s;
+        // transition-delay: 0;
+      }
+  
+      &:before {
+        transform-origin: top right;
+      }
+  
+      &:after {
+        transform-origin: bottom right;
+      }
+    }
+  }
+  
+  
+  
+  // Animated Arrow Button
+  
+  .animated-arrow {
+    display: inline-block;
+    color: white;
+    font-size: 1.25em;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    // transition: all 0.2s;
+  
+    
+  }
+     
+  
+  
+  .secondary-text{
     color: $secondary-color;
 
 }
 
 main {
     padding: 4rem;
-    height: 100%;
+    min-height: calc(100vh - 60px);
+
 
     .icons {
         margin-top:1rem;
@@ -89,6 +229,12 @@ main {
             margin-top: 20vh;
         }
     }
+
+}
+#home .small-heading {
+    font-family: 'Playfair Display',serif;
+    margin-top: 2rem;
+    line-height: 2;
 
 }
 
