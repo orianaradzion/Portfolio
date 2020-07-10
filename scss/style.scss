@@ -49,10 +49,11 @@ h3 {
         
 
     
-.small-heading{
+h2.small-heading{
     margin-bottom:2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color,2), 0.5);
+    font-family: 'Playfair Display',serif;
 }
 }
 
@@ -207,10 +208,8 @@ header{
 
 main {
     padding: 4rem;
-    min-height: calc(100vh - 60px);
-
-
-    .icons {
+    
+.icons {
         margin-top:1rem;
 
         a {
