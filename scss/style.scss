@@ -28,7 +28,8 @@ body{
     color:set-text-color($primary-color);
     height: 100%;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+
     line-height: 1.5;
     
 }
@@ -78,9 +79,9 @@ header{
     justify-content: center;
     height: 100%;
     font-family: 'Playfair Display', serif;
-    position: absolute;
-    left: 75%;
-    top: 119px;
+    position: relative;
+    left: 23%;
+    top: 5%;
   }
   
   ul {
@@ -97,48 +98,26 @@ header{
   
   .the-arrow {
     width: $shaft-width;
-    // transition: all 0.2s;
-   
-    &.-left {
-      position: absolute;
-      top: 60%;
-        left: 0;
-  
-      > .shaft {
-        width: 0;
-        background-color: white;
-        
-        &:before,
-        &:after {
-          width: 0;
-          background-color: white;
-        }
-  
-        &:before {
-          transform: rotate(0);
-        }
-  
-        &:after {
-          transform: rotate(0);
-        }
-      }
-    }
+ 
     
-    &.-right {
+   
+&.-right {
         position: absolute;
         top: 60%;
         left: 98%;
         margin-left: 1rem;
+        
+        
+        
       
-      > .shaft {
+      .shaft {
         width: $shaft-width;
-        transition-delay: 0.2s;
+        
   
         &:before,
         &:after { 
           width: $arrow-head-width;
-          transition-delay: 0.3s;
-          transition: all 0.5s;
+          
         }
         
         &:before {
@@ -150,15 +129,18 @@ header{
         }
       }
     }
+
+    .the-arrow.-right :hover{
+      left: 103%;
+    }
   
-    > .shaft {
+  
+    .shaft {
       background-color: white;
       display: block;
       height: $shaft-thickness;
       position: relative;
-    //   transition: all 0.2s;
-    //   transition-delay: 0;
-    //   will-change: transform;
+  
   
       &:before,
       &:after {
@@ -169,8 +151,7 @@ header{
         position: absolute;
         top: 0;
         right: 0;
-        // transition: all 0.2s;
-        // transition-delay: 0;
+       
       }
   
       &:before {
@@ -194,14 +175,19 @@ header{
     font-style: italic;
     text-decoration: none;
     position: relative;
-    // transition: all 0.2s;
+    
   
     
   }
-     
+     .the-arrow.-right{
+       transition-duration: 2s;
+       transition-timing-function:linear;
+     }
+  .container li:hover .the-arrow.-right {
+    left: 137%;
+  }
   
-  
-  .secondary-text{
+.secondary-text{
     color: $secondary-color;
 
 }
@@ -222,12 +208,7 @@ main {
            }
            
     }
-    &#home{
-        overflow: hidden;
-        h1 {
-            margin-top: 20vh;
-        }
-    }
+    
 
 }
 #home .small-heading {

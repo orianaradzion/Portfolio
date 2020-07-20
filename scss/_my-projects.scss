@@ -1,23 +1,35 @@
 
-
+.skill-list{
+    column-count: 2;
+    margin-bottom: 2rem;
+}
+.skills{
+    font-size: 1rem;
+    list-style-image: url(img/thicker.png);
+}
 .projects-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 0.7rem;
+    grid-gap: 1rem;
     margin-bottom: 3rem;
 
-
+ 
     img{
         width: 100%;
         border:3px #fff solid;
+        border-radius: 5%;
+        margin-bottom: 1.5rem;
+        height: auto;
 
         &:hover {
             opacity:0.5;
             border-color: $secondary-color;
             @include ease-out;
+            margin-bottom: 0.5rem;
         }
 
     }
+
 }
 
 .btn {
@@ -35,14 +47,13 @@
 
 .btn-dark{
 @extend .btn;
-background: darken($primary-color,50);
+background: darken($primary-color,10);
 color: #fff;
 
 }
-
-.btn-light {
-@extend .btn;
-background: lighten($primary-color,50);
-color: #333;
-
+a[title]{
+    
+    color: $secondary-color;
 }
+
+
