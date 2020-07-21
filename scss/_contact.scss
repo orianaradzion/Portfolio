@@ -1,7 +1,7 @@
 
 
-body{
-    min-height: 100%;
+#flex-box{
+    min-height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,33 +10,25 @@ body{
         -ms-flex-direction: column;
             flex-direction: column;
 }
-
+#contact{
+    flex:1
+}
 .boxes{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     margin-top: 1rem;
     overflow: hidden;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-            margin-bottom: 1rem;
+    margin-bottom: 1rem;
 
- 
-
-    div {
+ div {
         font-size: 2rem;
         border: 3px white solid;
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem 2rem;
+        margin: 0 1em;
         margin-bottom: 3rem;
+
         @include ease-out;
 
         &:hover{
